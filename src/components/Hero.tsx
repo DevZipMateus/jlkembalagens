@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section id="home" className="pt-32 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
       {/* Background with overlay */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1633354624102-fc5e3265afcc?q=80')] bg-cover bg-center">
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/184a8e1b-366d-469f-8080-3a9caf90469c.png')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
