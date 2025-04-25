@@ -28,7 +28,7 @@ const AboutUs = () => {
           
           {/* Right Column - Content */}
           <div className="lg:w-1/2">
-            <div className="inline-block bg-corporate-blue/10 text-corporate-blue font-medium px-4 py-1.5 rounded-full text-sm mb-4 animate-fade-in">
+            <div className="inline-block bg-corporate-blue/10 text-corporate-blue font-medium px-4 rounded-full text-sm mb-4 animate-fade-in py-[15px]">
               Sobre a JLK
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 animate-fade-in" style={{
