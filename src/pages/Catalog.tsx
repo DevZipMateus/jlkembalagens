@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Layout/Header';
@@ -26,7 +27,7 @@ const Catalog = () => {
     {
       id: 3,
       name: "Sacolas Douradas com Alça",
-      image: "/lovable-uploads/8d19388e-0535-4328-b9e3-a7d910bf18ef.png"
+      image: "/lovable-uploads/fb4f3bbd-d108-4a26-8bea-d3963cd268a0.png"
     },
     {
       id: 4,
