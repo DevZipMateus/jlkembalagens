@@ -1,9 +1,11 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import FloatingButton from '../components/FloatingButton';
 import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 const Catalog = () => {
   const products = [
@@ -69,15 +71,23 @@ const Catalog = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="bg-gray-50 py-16">
-          <div className="container-custom">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <main className="flex-grow pt-16 sm:pt-20 lg:pt-24">
+        {/* Hero Section with background image */}
+        <section className="relative bg-[url('/lovable-uploads/184a8e1b-366d-469f-8080-3a9caf90469c.png')] bg-cover bg-center py-16 sm:py-20 lg:py-24">
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="container-custom relative z-10">
+            <div className="text-center text-white">
+              <Link 
+                to="/" 
+                className="inline-flex items-center text-white/80 hover:text-white mb-4 sm:mb-6 transition-colors"
+              >
+                <ArrowLeft size={16} className="mr-2" />
+                <span className="text-sm sm:text-base">Voltar ao Início</span>
+              </Link>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
                 Catálogo de Produtos
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg lg:text-xl max-w-3xl mx-auto px-4">
                 Confira nossa linha completa de embalagens plásticas de alta qualidade
               </p>
             </div>
@@ -85,25 +95,26 @@ const Catalog = () => {
         </section>
 
         {/* Products Grid */}
-        <section className="py-16">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
               {products.map((product) => (
-                <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="aspect-square overflow-hidden">
                     <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-3 sm:mb-4 text-center min-h-[2.5rem] sm:min-h-[3rem] flex items-center justify-center">
                       {product.name}
                     </h3>
                     <Button
                       onClick={() => handleWhatsAppClick(product.name)}
-                      className="w-full bg-[#25D366] hover:bg-[#1EA952] text-white"
+                      className="w-full bg-[#25D366] hover:bg-[#1EA952] text-white text-sm sm:text-base py-2 sm:py-3"
                     >
                       Solicite um Orçamento
                     </Button>

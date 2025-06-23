@@ -67,18 +67,18 @@ const ProductCarousel = () => {
   }, [products.length]);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">
             Nossos Produtos
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Confira nossa linha completa de embalagens plásticas de alta qualidade
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto">
           <Carousel className="w-full">
             <CarouselContent className="relative">
               {products.map((product, index) => (
@@ -88,16 +88,17 @@ const ProductCarousel = () => {
                     index === currentIndex ? 'opacity-100' : 'opacity-0 absolute inset-0'
                   }`}
                 >
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-md">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden mx-auto">
                     <div className="aspect-square overflow-hidden">
                       <img
                         src={product.image}
                         alt={product.name}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </div>
-                    <div className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-900">
+                    <div className="p-4 sm:p-6 text-center">
+                      <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900">
                         {product.name}
                       </h3>
                     </div>
@@ -108,14 +109,15 @@ const ProductCarousel = () => {
           </Carousel>
           
           {/* Indicators */}
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-4 sm:mt-6 space-x-2">
             {products.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
                   index === currentIndex ? 'bg-blue-600' : 'bg-gray-300'
                 }`}
+                aria-label={`Ir para produto ${index + 1}`}
               />
             ))}
           </div>

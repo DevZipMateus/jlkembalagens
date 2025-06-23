@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,37 +16,41 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
     }`}>
       <div className="container-custom">
-        {/* Top bar */}
-        <div className={`hidden lg:flex justify-between items-center mb-4 text-sm ${
+        {/* Top bar - hidden on small screens, visible on medium+ */}
+        <div className={`hidden md:flex justify-between items-center mb-4 text-sm ${
           isScrolled ? 'text-gray-700' : 'text-white'
         }`}>
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4 lg:space-x-6">
             <a href="tel:+5521992137582" className={`flex items-center transition-colors ${
               isScrolled ? 'hover:text-gray-900' : 'hover:text-gray-200'
             }`}>
-              <Phone size={16} className="mr-2" />
-              (21) 99213-7582
+              <Phone size={14} className="mr-1 lg:mr-2" />
+              <span className="text-xs lg:text-sm">(21) 99213-7582</span>
             </a>
             <a href="mailto:jefinhojlk@gmail.com" className={`flex items-center transition-colors ${
               isScrolled ? 'hover:text-gray-900' : 'hover:text-gray-200'
             }`}>
-              <Mail size={16} className="mr-2" />
-              jefinhojlk@gmail.com
+              <Mail size={14} className="mr-1 lg:mr-2" />
+              <span className="text-xs lg:text-sm">jefinhojlk@gmail.com</span>
             </a>
             <div className="flex items-center">
-              <MapPin size={16} className="mr-2" />
-              Rua Guaiuba, 359
+              <MapPin size={14} className="mr-1 lg:mr-2" />
+              <span className="text-xs lg:text-sm">Rua Guaiuba, 359</span>
             </div>
           </div>
           <a href="https://www.instagram.com/jlkembalagens" 
              target="_blank" 
              rel="noopener noreferrer"
-             className={`transition-colors ${
+             className={`transition-colors text-xs lg:text-sm ${
                isScrolled ? 'hover:text-gray-900' : 'hover:text-gray-200'
              }`}>
             @jlkembalagens
@@ -56,22 +61,22 @@ const Header = () => {
         <nav className="flex items-center justify-end">
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-1">
-            <a href="#home" className={`nav-link ${
+            <a href="#home" className={`nav-link text-sm lg:text-base ${
               isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
             }`}>Início</a>
-            <a href="#about" className={`nav-link ${
+            <a href="#about" className={`nav-link text-sm lg:text-base ${
               isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
             }`}>Sobre</a>
-            <a href="/catalogo" className={`nav-link ${
+            <Link to="/catalogo" className={`nav-link text-sm lg:text-base ${
               isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
-            }`}>Catálogo</a>
-            <a href="#contact" className={`nav-link ${
+            }`}>Catálogo</Link>
+            <a href="#contact" className={`nav-link text-sm lg:text-base ${
               isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
             }`}>Contato</a>
             <a href="https://wa.me/5521992137582" 
                target="_blank" 
                rel="noopener noreferrer"
-               className="btn-primary ml-4">
+               className="btn-primary ml-4 text-sm lg:text-base px-4 py-2">
               WhatsApp
             </a>
           </div>
@@ -84,33 +89,54 @@ const Header = () => {
             }`}
             aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </nav>
 
         {/* Mobile Menu */}
         <div className={`lg:hidden absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none overflow-hidden'
         }`}>
           <div className="container-custom py-4 space-y-4">
-            <a href="#home" className="block nav-link">Início</a>
-            <a href="#about" className="block nav-link">Sobre</a>
-            <a href="/catalogo" className="block nav-link">Catálogo</a>
-            <a href="#contact" className="block nav-link">Contato</a>
+            <a href="#home" 
+               onClick={closeMobileMenu}
+               className="block nav-link text-gray-700 py-2">Início</a>
+            <Link to="/catalogo" 
+                  onClick={closeMobileMenu}
+                  className="block nav-link text-gray-700 py-2">Catálogo</Link>
+            <a href="#about" 
+               onClick={closeMobileMenu}
+               className="block nav-link text-gray-700 py-2">Sobre</a>
+            <a href="#contact" 
+               onClick={closeMobileMenu}
+               className="block nav-link text-gray-700 py-2">Contato</a>
+            
             <div className="pt-4 space-y-3 border-t border-gray-100">
-              <a href="tel:+5521992137582" className="block text-sm text-gray-600 hover:text-gray-900">
+              <a href="tel:+5521992137582" 
+                 onClick={closeMobileMenu}
+                 className="block text-sm text-gray-600 hover:text-gray-900">
                 <Phone size={16} className="inline mr-2" />
                 (21) 99213-7582
               </a>
-              <a href="mailto:jefinhojlk@gmail.com" className="block text-sm text-gray-600 hover:text-gray-900">
+              <a href="mailto:jefinhojlk@gmail.com" 
+                 onClick={closeMobileMenu}
+                 className="block text-sm text-gray-600 hover:text-gray-900">
                 <Mail size={16} className="inline mr-2" />
                 jefinhojlk@gmail.com
               </a>
               <a href="https://www.instagram.com/jlkembalagens" 
                  target="_blank" 
                  rel="noopener noreferrer"
+                 onClick={closeMobileMenu}
                  className="block text-sm text-gray-600 hover:text-gray-900">
                 @jlkembalagens
+              </a>
+              <a href="https://wa.me/5521992137582" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 onClick={closeMobileMenu}
+                 className="btn-primary inline-block mt-2">
+                WhatsApp
               </a>
             </div>
           </div>
