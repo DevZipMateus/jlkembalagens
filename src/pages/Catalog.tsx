@@ -16,7 +16,7 @@ const Catalog = () => {
     {
       id: 1,
       name: "Saco Plástico Cinza 35x45",
-      image: "/lovable-uploads/f21ae426-1b43-4196-86a1-58c6d2725e73.png"
+      image: "/lovable-uploads/c8ba02be-9cb9-459c-92c4-bc30b4c20ad1.png"
     },
     {
       id: 2,
