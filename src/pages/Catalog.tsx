@@ -46,7 +46,7 @@ const Catalog = () => {
     },
     {
       id: 8,
-      name: "Sacola Metalizada",
+      name: "Sacola Preta reforçada",
       image: "/lovable-uploads/19d538ef-80c8-456b-a776-002aca714676.png"
     },
     {
