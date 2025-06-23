@@ -26,7 +26,7 @@ const Catalog = () => {
     {
       id: 3,
       name: "Sacolas Douradas com Alça",
-      image: "/lovable-uploads/ac891e3c-e4ba-4c0f-b67e-b50b3e922da1.png"
+      image: "/lovable-uploads/8d19388e-0535-4328-b9e3-a7d910bf18ef.png"
     },
     {
       id: 4,
