@@ -89,7 +89,7 @@ const Catalog = () => {
           <div className="absolute inset-0 bg-black/60" />
           <div className="container-custom relative z-10">
             <div className="text-center text-white">
-              <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-4 sm:mb-6 transition-colors">
+              <Link to="/" className="inline-flex mb-40 -bottom-40 hover:-bottom-0.5 mb-4 sm:mb-6 transition-colors">
                 <ArrowLeft size={16} className="mr-2" />
                 <span className="text-sm sm:text-base">Voltar ao Início</span>
               </Link>
