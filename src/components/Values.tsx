@@ -11,6 +11,12 @@ const Values = () => {
     }
   };
 
+  const handleWhatsAppClick = (productName: string) => {
+    const message = `Olá! Gostaria de solicitar um orçamento para: ${productName}`;
+    const whatsappUrl = `https://wa.me/5521992137582?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white">
       <div className="container-custom">
@@ -36,6 +42,47 @@ const Values = () => {
               className="w-full h-auto rounded-lg shadow-lg"
               loading="lazy"
             />
+          </div>
+          
+          {/* Seção de Sacos de Gelo */}
+          <div className="mb-8 sm:mb-12 space-y-6">
+            {/* Sacos de Gelo Filtrado */}
+            <div className="text-center">
+              <div className="mb-4">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                  Sacos de Gelo Filtrado
+                </h3>
+                <div className="text-gray-700 space-y-1">
+                  <p>3kg</p>
+                  <p>5kg</p>
+                  <p>10kg</p>
+                </div>
+              </div>
+              <Button 
+                onClick={() => handleWhatsAppClick('Sacos de Gelo Filtrado')}
+                className="bg-gray-600 hover:bg-gray-500 text-white px-6 py-3 text-base font-semibold"
+              >
+                Solicitar Orçamento - Sacos de Gelo Filtrado
+              </Button>
+            </div>
+
+            {/* Sacos de Gelo em Escama */}
+            <div className="text-center">
+              <div className="mb-4">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                  Sacos de Gelo em Escama
+                </h3>
+                <div className="text-gray-700">
+                  <p>20kg</p>
+                </div>
+              </div>
+              <Button 
+                onClick={() => handleWhatsAppClick('Sacos de Gelo em Escama')}
+                className="bg-gray-600 hover:bg-gray-500 text-white px-6 py-3 text-base font-semibold"
+              >
+                Solicitar Orçamento - Sacos de Gelo em Escama
+              </Button>
+            </div>
           </div>
           
           {/* Botão Ver Disponibilidade */}
