@@ -1,7 +1,16 @@
 
 import React from 'react';
+import { Button } from './ui/button';
 
 const Values = () => {
+  const handleAvailabilityCheck = () => {
+    // Scroll to contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white">
       <div className="container-custom">
@@ -27,6 +36,16 @@ const Values = () => {
               className="w-full h-auto rounded-lg shadow-lg"
               loading="lazy"
             />
+          </div>
+          
+          {/* Botão Ver Disponibilidade */}
+          <div className="text-center mb-8 sm:mb-12">
+            <Button 
+              onClick={handleAvailabilityCheck}
+              className="bg-primary text-white hover:bg-primary/90 px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold"
+            >
+              Ver Disponibilidade
+            </Button>
           </div>
           
           {/* Espaço para textos manuais */}
