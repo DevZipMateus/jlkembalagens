@@ -58,6 +58,41 @@ const Catalog = () => {
       id: 10,
       name: "Sacola Transparente",
       image: "/lovable-uploads/c3628635-3afe-4a06-b7d4-8f58d159c292.png"
+    },
+    {
+      id: 11,
+      name: "Sacolas Amarelas com Alça",
+      image: "/lovable-uploads/0a1ed76d-565a-4a0a-8138-e51720dd595f.png"
+    },
+    {
+      id: 12,
+      name: "Sacola Verde com Alça",
+      image: "/lovable-uploads/201669d5-3f2f-4799-beb8-4815354959a4.png"
+    },
+    {
+      id: 13,
+      name: "Saco Plástico Cinza 35x45",
+      image: "/lovable-uploads/bf40dc32-7638-4702-8a4e-1fc93fc62931.png"
+    },
+    {
+      id: 14,
+      name: "Sacola Verde Reforçada",
+      image: "/lovable-uploads/650dcaee-b217-4aec-858b-6d5e87e45834.png"
+    },
+    {
+      id: 15,
+      name: "Sacolas Amarelas Bobina",
+      image: "/lovable-uploads/b21f3813-80c5-45c9-86c9-528d0ab3306e.png"
+    },
+    {
+      id: 16,
+      name: "Saco para Gelo Transparente",
+      image: "/lovable-uploads/a463b577-38fc-472b-ba40-97bd7bf3e9e1.png"
+    },
+    {
+      id: 17,
+      name: "Sacola Verde Resistente",
+      image: "/lovable-uploads/d747c0ce-c738-4687-b8ae-0151cf4df183.png"
     }
   ];
 
