@@ -75,7 +75,7 @@ const Catalog = () => {
     },
     {
       id: 13,
-      name: "Saco de Lixo Branco Reforçado",
+      name: "Saco de Gelo Transparente Reforçado",
       image: "/lovable-uploads/2bd73b6a-aba9-40e3-8226-060f053cfd8b.png"
     },
     {
