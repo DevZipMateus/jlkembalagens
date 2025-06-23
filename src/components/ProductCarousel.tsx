@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Button } from '@/components/ui/button';
 
 const ProductCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -156,6 +158,15 @@ const ProductCarousel = () => {
               />
             ))}
           </div>
+        </div>
+
+        {/* Catalog Button */}
+        <div className="text-center mt-8 sm:mt-12">
+          <Link to="/catalogo">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg font-semibold rounded-lg transition-colors duration-300">
+              Confira nosso catálogo
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
