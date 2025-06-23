@@ -1,7 +1,9 @@
+
 import React, { useEffect } from 'react';
 import Header from '../components/Layout/Header';
 import Footer from '../components/Layout/Footer';
 import Hero from '../components/Hero';
+import ProductCarousel from '../components/ProductCarousel';
 import Services from '../components/Services';
 import AboutUs from '../components/AboutUs';
 import Contact from '../components/Contact';
@@ -32,6 +34,7 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero />
+        <ProductCarousel />
         <Services />
         <AboutUs />
         <Contact />

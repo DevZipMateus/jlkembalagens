@@ -62,9 +62,9 @@ const Header = () => {
             <a href="#about" className={`nav-link ${
               isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
             }`}>Sobre</a>
-            <a href="#products" className={`nav-link ${
+            <a href="/catalogo" className={`nav-link ${
               isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
-            }`}>Produtos</a>
+            }`}>Catálogo</a>
             <a href="#contact" className={`nav-link ${
               isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
             }`}>Contato</a>
@@ -95,7 +95,7 @@ const Header = () => {
           <div className="container-custom py-4 space-y-4">
             <a href="#home" className="block nav-link">Início</a>
             <a href="#about" className="block nav-link">Sobre</a>
-            <a href="#products" className="block nav-link">Produtos</a>
+            <a href="/catalogo" className="block nav-link">Catálogo</a>
             <a href="#contact" className="block nav-link">Contato</a>
             <div className="pt-4 space-y-3 border-t border-gray-100">
               <a href="tel:+5521992137582" className="block text-sm text-gray-600 hover:text-gray-900">
