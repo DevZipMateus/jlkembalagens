@@ -22,23 +22,17 @@ const Header = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+      isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/95 backdrop-blur-sm py-4'
     }`}>
       <div className="container-custom">
         {/* Top bar - hidden on small screens, visible on medium+ */}
-        <div className={`hidden md:flex justify-between items-center mb-4 text-sm ${
-          isScrolled ? 'text-gray-700' : 'text-white'
-        }`}>
+        <div className="hidden md:flex justify-between items-center mb-4 text-sm text-gray-700">
           <div className="flex items-center space-x-4 lg:space-x-6">
-            <a href="tel:+5521992137582" className={`flex items-center transition-colors ${
-              isScrolled ? 'hover:text-gray-900' : 'hover:text-gray-200'
-            }`}>
+            <a href="tel:+5521992137582" className="flex items-center transition-colors hover:text-gray-900">
               <Phone size={14} className="mr-1 lg:mr-2" />
               <span className="text-xs lg:text-sm">(21) 99213-7582</span>
             </a>
-            <a href="mailto:jefinhojlk@gmail.com" className={`flex items-center transition-colors ${
-              isScrolled ? 'hover:text-gray-900' : 'hover:text-gray-200'
-            }`}>
+            <a href="mailto:jefinhojlk@gmail.com" className="flex items-center transition-colors hover:text-gray-900">
               <Mail size={14} className="mr-1 lg:mr-2" />
               <span className="text-xs lg:text-sm">jefinhojlk@gmail.com</span>
             </a>
@@ -50,9 +44,7 @@ const Header = () => {
           <a href="https://www.instagram.com/jlkembalagens" 
              target="_blank" 
              rel="noopener noreferrer"
-             className={`transition-colors text-xs lg:text-sm ${
-               isScrolled ? 'hover:text-gray-900' : 'hover:text-gray-200'
-             }`}>
+             className="transition-colors text-xs lg:text-sm hover:text-gray-900">
             @jlkembalagens
           </a>
         </div>
@@ -61,18 +53,10 @@ const Header = () => {
         <nav className="flex items-center justify-end">
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-1">
-            <a href="#home" className={`nav-link text-sm lg:text-base ${
-              isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
-            }`}>Início</a>
-            <a href="#about" className={`nav-link text-sm lg:text-base ${
-              isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
-            }`}>Sobre</a>
-            <Link to="/catalogo" className={`nav-link text-sm lg:text-base ${
-              isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
-            }`}>Catálogo</Link>
-            <a href="#contact" className={`nav-link text-sm lg:text-base ${
-              isScrolled ? 'text-gray-700 hover:text-gray-900' : 'text-white hover:text-gray-200'
-            }`}>Contato</a>
+            <a href="#home" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Início</a>
+            <a href="#about" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Sobre</a>
+            <Link to="/catalogo" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Catálogo</Link>
+            <a href="#contact" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Contato</a>
             <a href="https://wa.me/5521992137582" 
                target="_blank" 
                rel="noopener noreferrer"
@@ -84,9 +68,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden p-2 hover:bg-white/10 rounded-md ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            }`}
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-md text-gray-700"
             aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
