@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import ProductCarousel from '../components/ProductCarousel';
 import Services from '../components/Services';
 import AboutUs from '../components/AboutUs';
+import Values from '../components/Values';
 import Contact from '../components/Contact';
 import FloatingButton from '../components/FloatingButton';
 
@@ -37,6 +38,7 @@ const Index = () => {
         <ProductCarousel />
         <Services />
         <AboutUs />
+        <Values />
         <Contact />
       </main>
       
