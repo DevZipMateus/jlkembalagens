@@ -12,6 +12,13 @@ const Values = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
+          {/* Texto explicativo */}
+          <div className="mb-6 sm:mb-8">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed text-center">
+              Valores são negociáveis para revenda e por quantidade. Em caso de pedidos antecipados, pode-se solicitar pacotes com peso diferente do fixo. Pedidos para cores não fixadas na tabela, devem-se consultar valores e disponibilidade.
+            </p>
+          </div>
+          
           {/* Imagem dos valores */}
           <div className="mb-8 sm:mb-12">
             <img 
