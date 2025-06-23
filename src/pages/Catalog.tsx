@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Layout/Header';
@@ -78,11 +77,6 @@ const Catalog = () => {
       id: 13,
       name: "Saco de Lixo Branco Reforçado",
       image: "/lovable-uploads/2bd73b6a-aba9-40e3-8226-060f053cfd8b.png"
-    },
-    {
-      id: 14,
-      name: "Sacolas Plásticas Empilhadas",
-      image: "/lovable-uploads/e740fac8-675b-434d-8435-9176c5fc200e.png"
     },
     {
       id: 15,
