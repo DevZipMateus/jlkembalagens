@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +18,18 @@ const Header = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  // Check if we're on the catalog page
+  const isOnCatalogPage = location.pathname === '/catalogo';
+
+  // Helper function to create navigation links
+  const createNavLink = (href: string, section: string) => {
+    if (isOnCatalogPage && href.startsWith('#')) {
+      // If on catalog page and link is an anchor, navigate to home page with anchor
+      return `/${href}`;
+    }
+    return href;
   };
 
   return (
@@ -53,10 +65,10 @@ const Header = () => {
         <nav className="flex items-center justify-end">
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-1">
-            <a href="#home" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Início</a>
-            <a href="#about" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Sobre</a>
+            <a href={createNavLink('#home', 'home')} className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Início</a>
+            <a href={createNavLink('#about', 'about')} className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Sobre</a>
             <Link to="/catalogo" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Catálogo</Link>
-            <a href="#contact" className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Contato</a>
+            <a href={createNavLink('#contact', 'contact')} className="nav-link text-sm lg:text-base text-gray-700 hover:text-gray-900">Contato</a>
             <a href="https://wa.me/5521992137582" 
                target="_blank" 
                rel="noopener noreferrer"
@@ -80,16 +92,16 @@ const Header = () => {
           isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none overflow-hidden'
         }`}>
           <div className="container-custom py-4 space-y-4">
-            <a href="#home" 
+            <a href={createNavLink('#home', 'home')} 
                onClick={closeMobileMenu}
                className="block nav-link text-gray-700 py-2">Início</a>
             <Link to="/catalogo" 
                   onClick={closeMobileMenu}
                   className="block nav-link text-gray-700 py-2">Catálogo</Link>
-            <a href="#about" 
+            <a href={createNavLink('#about', 'about')} 
                onClick={closeMobileMenu}
                className="block nav-link text-gray-700 py-2">Sobre</a>
-            <a href="#contact" 
+            <a href={createNavLink('#contact', 'contact')} 
                onClick={closeMobileMenu}
                className="block nav-link text-gray-700 py-2">Contato</a>
             
