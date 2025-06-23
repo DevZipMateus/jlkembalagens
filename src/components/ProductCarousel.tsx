@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
@@ -55,6 +56,31 @@ const ProductCarousel = () => {
       id: 10,
       name: "Sacola Preta Extra Grande",
       image: "/lovable-uploads/4cb139f8-9672-45bd-be6c-b2812f0bebda.png"
+    },
+    {
+      id: 11,
+      name: "Saco Plástico Verde Industrial",
+      image: "/lovable-uploads/d25a6694-0ae7-4721-a043-e2a3e3b368c3.png"
+    },
+    {
+      id: 12,
+      name: "Sacola Plástica Transparente",
+      image: "/lovable-uploads/1608f9a3-f484-4b44-8e28-767b80d28859.png"
+    },
+    {
+      id: 13,
+      name: "Saco de Lixo Branco Reforçado",
+      image: "/lovable-uploads/2bd73b6a-aba9-40e3-8226-060f053cfd8b.png"
+    },
+    {
+      id: 14,
+      name: "Sacolas Plásticas Empilhadas",
+      image: "/lovable-uploads/e740fac8-675b-434d-8435-9176c5fc200e.png"
+    },
+    {
+      id: 15,
+      name: "Saco de Gelo Personalizado",
+      image: "/lovable-uploads/653a3495-395e-4a09-adee-c633ad55f5e9.png"
     }
   ];
 
