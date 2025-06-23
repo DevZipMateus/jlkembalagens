@@ -71,7 +71,7 @@ const Catalog = () => {
     {
       id: 12,
       name: "Sacola Plástica Transparente",
-      image: "/lovable-uploads/1608f9a3-f484-4b44-8e28-767b80d28859.png"
+      image: "/lovable-uploads/10afad40-3e15-4991-8eb7-5fb52f8ec6d0.png"
     },
     {
       id: 13,
